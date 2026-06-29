@@ -1,0 +1,86 @@
+.wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.55;
+  will-change: transform;
+}
+
+.light .orb1 {
+  width: 420px;
+  height: 420px;
+  top: -8%;
+  right: -5%;
+  background: radial-gradient(circle, rgba(247, 148, 29, 0.35), transparent 70%);
+}
+
+.light .orb2 {
+  width: 360px;
+  height: 360px;
+  bottom: 10%;
+  left: -8%;
+  background: radial-gradient(circle, rgba(0, 104, 55, 0.2), transparent 70%);
+}
+
+.light .orb3 {
+  width: 280px;
+  height: 280px;
+  top: 40%;
+  left: 35%;
+  background: radial-gradient(circle, rgba(249, 176, 77, 0.25), transparent 70%);
+}
+
+.dark .orb1 {
+  width: 500px;
+  height: 500px;
+  top: -15%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(247, 148, 29, 0.18), transparent 70%);
+  opacity: 0.7;
+}
+
+.dark .orb2 {
+  width: 400px;
+  height: 400px;
+  bottom: -10%;
+  right: -5%;
+  background: radial-gradient(circle, rgba(0, 138, 74, 0.22), transparent 70%);
+  opacity: 0.6;
+}
+
+.dark .orb3 {
+  width: 300px;
+  height: 300px;
+  top: 30%;
+  right: 25%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.06), transparent 70%);
+  opacity: 0.5;
+}
+
+.warm .orb1 {
+  width: 380px;
+  height: 380px;
+  top: 5%;
+  right: 10%;
+  background: radial-gradient(circle, rgba(247, 148, 29, 0.3), transparent 70%);
+}
+
+.warm .orb2 {
+  width: 320px;
+  height: 320px;
+  bottom: 0;
+  left: 5%;
+  background: radial-gradient(circle, rgba(255, 220, 180, 0.4), transparent 70%);
+}
+
+.warm .orb3 {
+  display: none;
+}

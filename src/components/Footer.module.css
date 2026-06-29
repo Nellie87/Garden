@@ -1,0 +1,117 @@
+.footer {
+  position: relative;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 4rem clamp(1.25rem, 4vw, 3rem) 2.5rem;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(
+    160deg,
+    #0d1a12 0%,
+    #0a1f14 40%,
+    #121a14 100%
+  );
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 40rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.location {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.contact {
+  margin: 0.25rem 0;
+}
+
+.phone {
+  font-family: var(--font-brand);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  position: relative;
+  transition: color 0.25s;
+}
+
+.phone::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--orange), transparent);
+  border-radius: 2px;
+}
+
+.phone:hover {
+  color: var(--orange-light);
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0.25rem 0;
+}
+
+.social a {
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  transition: color 0.25s, transform 0.25s;
+}
+
+.social a:hover {
+  color: var(--orange-light);
+  transform: translateX(4px);
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0.75rem 0 0.25rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2rem;
+}
+
+.links a {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.25s;
+}
+
+.links a:hover {
+  color: var(--orange-light);
+}
+
+.copy {
+  font-size: 0.72rem;
+  opacity: 0.35;
+  margin-top: 0.75rem;
+}

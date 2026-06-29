@@ -1,0 +1,304 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6.5rem 1.25rem 3rem;
+  overflow: hidden;
+}
+
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ambientImg {
+  position: absolute;
+  inset: -8%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(28px) saturate(1.35) brightness(0.85);
+  will-change: transform, opacity;
+}
+
+.ambientBlur {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 20, 15, 0.25) 0%,
+    rgba(10, 20, 15, 0.45) 100%
+  );
+}
+
+.ambientTint {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: soft-light;
+  transition: background 0.8s;
+}
+
+.pageTitle {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 400;
+  color: var(--cream);
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.3);
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+  width: min(920px, 94vw);
+}
+
+.cardInner {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow:
+    0 32px 80px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.splitView {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+
+.splitLeft,
+.splitRight {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+  animation: kenBurns 14s ease-in-out infinite alternate;
+}
+
+.splitRight {
+  animation-delay: -7s;
+}
+
+@keyframes kenBurns {
+  from { transform: scale(1.02); }
+  to { transform: scale(1.1); }
+}
+
+.splitLine {
+  position: absolute;
+  top: -5%;
+  bottom: -5%;
+  left: 50%;
+  width: 3px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(255, 255, 255, 0.7) 30%,
+    rgba(255, 255, 255, 0.7) 70%,
+    transparent
+  );
+  transform: translateX(-50%) rotate(8deg);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.15) 0%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  pointer-events: none;
+}
+
+.colorWash {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  padding-bottom: 5.5rem;
+}
+
+.overlayText {
+  max-width: 22rem;
+}
+
+.scriptTitle {
+  font-family: var(--font-script);
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  filter: drop-shadow(0 0 12px currentColor);
+}
+
+.brandLogo {
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 0.92rem;
+  color: rgba(250, 246, 238, 0.85);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  font-weight: 300;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+.exploreBtn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--orange-light), var(--orange));
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 2rem;
+  transition: transform 0.3s var(--ease-spring), box-shadow 0.3s;
+  box-shadow: 0 4px 24px rgba(247, 148, 29, 0.4);
+}
+
+.exploreBtn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 36px rgba(247, 148, 29, 0.5);
+}
+
+.navArrows {
+  position: absolute;
+  bottom: 5.75rem;
+  right: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 3;
+}
+
+.navArrows button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--cream);
+  display: grid;
+  place-items: center;
+  backdrop-filter: blur(8px);
+  transition: background 0.2s;
+}
+
+.navArrows button:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.glassDock {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.45rem;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 2.5rem;
+  backdrop-filter: blur(20px) saturate(1.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  z-index: 4;
+  max-width: calc(100% - 1.5rem);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.glassDock::-webkit-scrollbar {
+  display: none;
+}
+
+.dockItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 2rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.78rem;
+  white-space: nowrap;
+  transition: background 0.25s, color 0.25s;
+  overflow: hidden;
+}
+
+.dockProgress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.6);
+  transform-origin: left;
+  border-radius: 1px;
+}
+
+.dockItem:hover {
+  color: var(--white);
+}
+
+.dockActive {
+  background: linear-gradient(135deg, var(--orange-light), var(--orange));
+  color: var(--white) !important;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(247, 148, 29, 0.45);
+}
+
+.locationHint {
+  position: relative;
+  z-index: 2;
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 238, 0.45);
+}
+
+@media (max-width: 600px) {
+  .splitLine {
+    transform: translateX(-50%) rotate(12deg);
+  }
+
+  .dockItem span {
+    display: none;
+  }
+
+  .dockActive span {
+    display: inline;
+  }
+
+  .overlay {
+    padding-bottom: 4.75rem;
+  }
+
+  .navArrows {
+    display: none;
+  }
+}

@@ -1,0 +1,115 @@
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.scriptLine {
+  font-family: var(--font-script);
+  font-weight: 700;
+  font-size: 1em;
+  white-space: nowrap;
+}
+
+.mark {
+  color: var(--forest);
+}
+
+.line {
+  color: var(--black);
+}
+
+.gardens {
+  font-family: var(--font-brand);
+  font-size: 0.38em;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  color: var(--orange);
+  margin-top: 0.15em;
+  padding-left: 0.35em;
+}
+
+.arch {
+  width: 85%;
+  height: auto;
+  margin-top: 0.1em;
+}
+
+.arch path {
+  stroke: var(--forest);
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.32em;
+  color: var(--black);
+  margin-top: 0.4em;
+  letter-spacing: 0.02em;
+}
+
+/* Variants */
+.light .mark {
+  color: #4db87a;
+}
+
+.light .line {
+  color: var(--cream);
+}
+
+.light .gardens {
+  color: var(--orange);
+}
+
+.light .arch path {
+  stroke: #4db87a;
+}
+
+.light .tagline {
+  color: rgba(250, 248, 244, 0.75);
+}
+
+.dark .mark {
+  color: var(--forest);
+}
+
+.dark .line {
+  color: var(--black);
+}
+
+.dark .gardens {
+  color: var(--orange);
+}
+
+.onGreen .mark,
+.onGreen .line,
+.onGreen .gardens,
+.onGreen .tagline {
+  color: var(--white);
+}
+
+.onGreen .gardens {
+  color: var(--orange-light);
+}
+
+.onGreen .arch path {
+  stroke: var(--white);
+}
+
+/* Sizes */
+.sm {
+  font-size: 1.1rem;
+}
+
+.md {
+  font-size: 1.5rem;
+}
+
+.lg {
+  font-size: 2.25rem;
+}
+
+.xl {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
