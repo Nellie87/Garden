@@ -7,7 +7,7 @@ const features = [
   {
     icon: Leaf,
     title: 'Lush Green Grounds',
-    text: 'Expansive lawns framed by mature trees — a natural, vibrant backdrop for any occasion.',
+    text: 'Expansive lawns framed by mature trees a natural, vibrant backdrop for any occasion.',
   },
   {
     icon: Users,
@@ -17,12 +17,12 @@ const features = [
   {
     icon: Sun,
     title: 'Golden-Hour Magic',
-    text: 'Warm Thika sunlight, fresh breeze, and starlit evenings — every hour feels cinematic.',
+    text: 'Warm Thika sunlight, fresh breeze, and starlit evenings every hour feels cinematic.',
   },
   {
     icon: Camera,
     title: 'Picture-Perfect',
-    text: 'Ground-level perspectives and elevated views — every corner is made for stunning photos.',
+    text: 'Ground-level perspectives and elevated views every corner is made for stunning photos.',
   },
 ]
 
