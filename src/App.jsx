@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Experiences from './components/Experiences'
 import Gallery from './components/Gallery'
 import Venue from './components/Venue'
 import Location from './components/Location'
@@ -12,6 +13,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <Experiences />
         <Gallery />
         <Venue />
         <Location />

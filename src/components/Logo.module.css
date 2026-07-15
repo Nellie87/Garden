@@ -82,6 +82,22 @@
   color: var(--orange);
 }
 
+.hero .mark {
+  color: #6ec49a;
+}
+
+.hero .line {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.hero .gardens {
+  color: var(--orange);
+}
+
+.hero .arch path {
+  stroke: #6ec49a;
+}
+
 .onGreen .mark,
 .onGreen .line,
 .onGreen .gardens,

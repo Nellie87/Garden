@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <header className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <a href="#" className={styles.logoLink}>
-        <Logo variant={scrolled ? 'dark' : 'light'} size="sm" />
+        <Logo variant={scrolled ? 'dark' : 'hero'} size="sm" />
       </a>
 
       <nav className={styles.desktop}>
