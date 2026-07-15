@@ -15,7 +15,7 @@ export default function App() {
         <Gallery />
         <Venue />
         <Location />
-        <Contact />
+        {/* <Contact /> */}
       </main>
       <Footer />
     </>
