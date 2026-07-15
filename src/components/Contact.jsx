@@ -23,7 +23,7 @@ export default function Contact() {
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nEvent: ${form.event}\n\n${form.message}`
     )
-    window.location.href = `mailto:info@marklinegardens.co.ke?subject=Event Inquiry - ${form.event}&body=${body}`
+    window.location.href = `mailto:nelwins85@gmail.com?subject=Event Inquiry - ${form.event}&body=${body}`
     setSubmitted(true)
   }
 
@@ -68,15 +68,15 @@ export default function Contact() {
               </div>
             </a>
 
-            <a href="mailto:info@marklinegardens.co.ke" className={styles.contactCard}>
+            {/* <a href="mailto:info@marklinegardens.co.ke" className={styles.contactCard}>
               <Mail size={22} strokeWidth={1.5} />
               <div>
                 <span className={styles.label}>Email</span>
                 <span className={styles.value}>info@marklinegardens.co.ke</span>
               </div>
-            </a>
+            </a> */}
 
-            <a
+            {/* <a
               href="https://wa.me/254783730801"
               target="_blank"
               rel="noopener noreferrer"
@@ -87,7 +87,7 @@ export default function Contact() {
                 <span className={styles.label}>WhatsApp</span>
                 <span className={styles.value}>Chat with us</span>
               </div>
-            </a>
+            </a> */}
 
             <div className={styles.social}>
               <a

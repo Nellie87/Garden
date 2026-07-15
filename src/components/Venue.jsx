@@ -88,7 +88,7 @@ export default function Venue() {
           </p>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           className={styles.showcase}
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -108,7 +108,7 @@ export default function Venue() {
               />
             </div>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         <div className={styles.features}>
           {features.map((f, i) => (
