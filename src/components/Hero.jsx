@@ -127,9 +127,9 @@ export default function Hero() {
                 <p className={styles.scriptTitle} style={{ color: current.accent }}>
                   {current.scriptTitle}
                 </p>
-                <div className={styles.brandLogo}>
+                {/* <div className={styles.brandLogo}>
                   <Logo variant="light" size="lg" showTagline />
-                </div>
+                </div> */}
                 <p className={styles.tagline}>{current.tagline}</p>
                 <a href="#contact" className={styles.exploreBtn}>
                   Explore Experiences
