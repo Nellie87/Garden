@@ -54,6 +54,41 @@
   font-weight: 300;
 }
 
+.categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 auto clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.category {
+  padding: 0.45rem 1.05rem;
+  border-radius: 2rem;
+  font-family: var(--font-brand);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 104, 55, 0.12);
+  transition: background 0.25s, color 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.category:hover {
+  color: var(--forest);
+  border-color: rgba(0, 104, 55, 0.28);
+  background: var(--white);
+}
+
+.categoryActive {
+  color: var(--white);
+  background: linear-gradient(135deg, var(--orange-light), var(--orange));
+  border-color: transparent;
+  box-shadow: 0 6px 18px rgba(247, 148, 29, 0.35);
+}
+
 /* ── Carousel ── */
 
 .carouselWrap {
@@ -171,17 +206,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   display: block;
   pointer-events: none;
-}
-
-.cardImgActive {
-  animation: kenBurns 14s ease-in-out infinite alternate;
-}
-
-@keyframes kenBurns {
-  from { transform: scale(1); }
-  to { transform: scale(1.06); }
 }
 
 .activeCaption {

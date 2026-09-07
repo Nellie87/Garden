@@ -1,11 +1,10 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
-  Heart,
+  GraduationCap,
   TreePine,
   Users,
   Sun,
-  Camera,
   Star,
   Check,
 } from 'lucide-react'
@@ -13,11 +12,10 @@ import { events, getEventImage, getGalleryImage } from '../data/events'
 import styles from './Experiences.module.css'
 
 const icons = {
-  wedding: Heart,
+  graduation: GraduationCap,
+  teambuilding: Users,
   picnic: TreePine,
-  graduation: Users,
   ruracio: Sun,
-  birthday: Camera,
 }
 
 const contentVariants = {
@@ -72,15 +70,17 @@ function EventChapter({ event, chapterRef, index, onInView }) {
             <motion.div
               key={heroSrc}
               className={styles.cinematicImg}
-              style={{
-                backgroundImage: `url(${heroSrc})`,
-                backgroundPosition: heroPosition,
-              }}
-              initial={{ opacity: 0, scale: 1.12, filter: 'blur(8px) brightness(0.9)' }}
+              initial={{ opacity: 0, scale: 1.04, filter: 'blur(8px) brightness(0.9)' }}
               animate={{ opacity: 1, scale: 1, filter: 'blur(0px) brightness(1)' }}
-              exit={{ opacity: 0, scale: 1.04, filter: 'blur(4px)' }}
+              exit={{ opacity: 0, scale: 1.02, filter: 'blur(4px)' }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-            />
+            >
+              <img
+                src={heroSrc}
+                alt={event.label}
+                style={{ objectPosition: heroPosition }}
+              />
+            </motion.div>
           </AnimatePresence>
           <div className={styles.cinematicOverlay} />
           <motion.div

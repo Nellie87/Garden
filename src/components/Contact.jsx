@@ -43,7 +43,7 @@ export default function Contact() {
             Let's Plan Your <em>Perfect Day</em>
           </h2>
           <p className={styles.subtitle}>
-            Reach out to book a site visit or inquire about hosting your event.
+            Reach out to us to get more information about our services and to inquire about hosting your event.
           </p>
         </motion.div>
 
@@ -91,7 +91,7 @@ export default function Contact() {
 
             <div className={styles.social}>
               <a
-                href="https://www.tiktok.com/@marklinegardens"
+                href="https://www.tiktok.com/@markline.gardens"
                 target="_blank"
                 rel="noopener noreferrer"
               >

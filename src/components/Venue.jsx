@@ -34,11 +34,6 @@ const showcasePhotos = [
     large: true,
   },
   {
-    src: '/images/gallery/garden-bench.jpg',
-    alt: 'Garden bench among the trees',
-    position: 'center center',
-  },
-  {
     src: '/images/gallery/sunny-lawn.jpg',
     alt: 'Sunlit lawn at Markline Gardens',
     position: 'center 40%',

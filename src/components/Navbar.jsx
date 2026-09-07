@@ -35,8 +35,8 @@ export default function Navbar() {
         ))}
       </nav>
 
-      <a href="#contact" className={styles.cta}>
-        Book a Visit
+      <a href="tel:+254783730801" className={styles.cta}>
+        Call Us
       </a>
 
       <button
@@ -64,8 +64,8 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
-            <a href="#contact" onClick={() => setOpen(false)} className={styles.mobileCta}>
-              Book a Visit
+            <a href="tel:+254783730801" onClick={() => setOpen(false)} className={styles.mobileCta}>
+              Call Us
             </a>
           </motion.nav>
         )}

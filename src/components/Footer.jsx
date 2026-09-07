@@ -29,8 +29,8 @@ export default function Footer() {
               0783 730 801
             </a>
             <div className={styles.actionBtns}>
-              <a href="#contact" className={styles.primaryBtn}>
-                Book a Visit
+              <a href="tel:+254783730801" className={styles.primaryBtn}>
+                Call Us
               </a>
               <a
                 href={MAP_LINK}

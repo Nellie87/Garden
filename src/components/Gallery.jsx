@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { MapPin, ChevronLeft, ChevronRight } from 'lucide-react'
-import { galleryPhotos, getGallerySrc } from '../data/gallery'
+import { galleryCategories, getGallerySrc, getPhotosByCategory } from '../data/gallery'
 import { hasVenueVideos, venueVideos } from '../data/videos'
 import AmbientOrbs from './AmbientOrbs'
 import styles from './Gallery.module.css'
@@ -25,14 +25,18 @@ function useSlideOffset() {
 }
 
 export default function Gallery() {
+  const [category, setCategory] = useState('all')
   const [active, setActive] = useState(0)
   const [paused, setPaused] = useState(false)
   const touchStart = useRef(null)
   const resumeTimer = useRef(null)
   const slideOffset = useSlideOffset()
-  const total = galleryPhotos.length
+  const photos = getPhotosByCategory(category)
+  const total = photos.length
+  const current = photos[Math.min(active, Math.max(total - 1, 0))]
 
   const goTo = useCallback((index) => {
+    if (!total) return
     setActive((index + total) % total)
   }, [total])
 
@@ -46,7 +50,7 @@ export default function Gallery() {
   }
 
   useEffect(() => {
-    if (paused) return undefined
+    if (paused || total === 0) return undefined
     const timer = setInterval(() => {
       setActive((i) => (i + 1) % total)
     }, AUTO_MS)
@@ -54,6 +58,10 @@ export default function Gallery() {
   }, [paused, total])
 
   useEffect(() => () => clearTimeout(resumeTimer.current), [])
+
+  useEffect(() => {
+    setActive(0)
+  }, [category])
 
   const handleTouchStart = (e) => {
     touchStart.current = e.touches[0].clientX
@@ -90,6 +98,25 @@ export default function Gallery() {
           </p>
         </motion.div>
 
+        <div className={styles.categories} role="tablist" aria-label="Gallery categories">
+          {galleryCategories.map((item) => (
+            <button
+              key={item.id}
+              type="button"
+              role="tab"
+              aria-selected={category === item.id}
+              className={`${styles.category} ${category === item.id ? styles.categoryActive : ''}`}
+              onClick={() => {
+                setCategory(item.id)
+                setActive(0)
+                pauseBriefly()
+              }}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+
         <div
           className={styles.carouselWrap}
           onMouseEnter={() => setPaused(true)}
@@ -120,7 +147,7 @@ export default function Gallery() {
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
-            {galleryPhotos.map((photo, index) => {
+            {photos.map((photo, index) => {
               const offset = index - active
               const isCenter = offset === 0
 
@@ -165,7 +192,6 @@ export default function Gallery() {
                       alt={photo.alt}
                       loading={index <= 2 ? 'eager' : 'lazy'}
                       draggable={false}
-                      className={isCenter ? styles.cardImgActive : ''}
                       style={{ objectPosition: photo.objectPosition || 'center center' }}
                     />
                   </div>
@@ -175,7 +201,7 @@ export default function Gallery() {
           </div>
 
           <motion.p
-            key={active}
+            key={`${category}-${active}`}
             className={styles.activeCaption}
             aria-live="polite"
             initial={{ opacity: 0, y: 6 }}
@@ -183,11 +209,11 @@ export default function Gallery() {
             transition={{ duration: 0.35 }}
           >
             <MapPin size={14} strokeWidth={2} aria-hidden="true" />
-            {galleryPhotos[active].caption} · Kiganjo, Thika
+            {current?.caption} · Kiganjo, Thika
           </motion.p>
 
           <div className={styles.dots} role="tablist" aria-label="Gallery slides">
-            {galleryPhotos.map((photo, i) => (
+            {photos.map((photo, i) => (
               <button
                 key={photo.id}
                 type="button"

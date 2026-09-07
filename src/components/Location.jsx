@@ -78,7 +78,7 @@ export default function Location() {
               <div>
                 <h3>Getting Here</h3>
                 <p>
-                  Approximately 30 minutes from Thika town centre via the
+                  Approximately 15 minutes from Thika town centre via the
                   Kiganjo road. Ample parking available on-site.
                 </p>
               </div>
@@ -91,8 +91,7 @@ export default function Location() {
               <div>
                 <h3>Visits</h3>
                 <p>
-                  Site visits by appointment. Contact us to schedule a walkthrough
-                  of the grounds at your convenience.
+                  Walk-ins are welcome.
                 </p>
               </div>
             </div>
