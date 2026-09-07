@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://marklinegardens.co.ke/sitemap.xml
+Sitemap: https://www.marklinegardens.co.ke/sitemap.xml
