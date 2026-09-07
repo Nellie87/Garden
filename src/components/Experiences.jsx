@@ -156,19 +156,7 @@ function EventChapter({ event, chapterRef, index, onInView }) {
               ))}
             </ul>
 
-            <div className={styles.ctaGroup}>
-              <motion.a
-                href="#contact"
-                className={styles.ctaPrimary}
-                whileHover={{ scale: 1.03, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Reserve This Experience
-              </motion.a>
-              <a href="#gallery" className={styles.ctaSecondary}>
-                View Gallery
-              </a>
-            </div>
+            
           </motion.div>
         </motion.div>
       </div>

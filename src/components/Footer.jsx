@@ -15,7 +15,7 @@ export default function Footer() {
         <div className={styles.main}>
           <div className={styles.brandCol}>
             <Logo variant="onGreen" size="md" showTagline />
-            <p className={styles.tagline}>See you in the garden.</p>
+            <p className={styles.tagline}>See you at Markline Gardens.</p>
             <p className={styles.location}>
               <MapPin size={14} strokeWidth={1.5} />
               Kiganjo, Thika · Kenya
@@ -57,7 +57,7 @@ export default function Footer() {
 
           <div className={styles.social}>
             <a
-              href="https://www.tiktok.com/@marklinegardens"
+              href="https://www.tiktok.com/@markline.gardens?_r=1&_t=ZS-99X9qfpuMev"
               target="_blank"
               rel="noopener noreferrer"
             >
