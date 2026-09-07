@@ -91,7 +91,7 @@ export default function Contact() {
 
             <div className={styles.social}>
               <a
-                href="https://www.tiktok.com/@markline.gardens"
+                href="https://www.tiktok.com/@markline.gardens?_r=1&_t=ZS-99X9qfpuMev"
                 target="_blank"
                 rel="noopener noreferrer"
               >
